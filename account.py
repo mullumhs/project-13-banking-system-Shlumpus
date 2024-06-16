@@ -5,11 +5,10 @@
 # Date: 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 class Account:
-    def __init__(self, name, balance, password, number):
+    def __init__(self, name, balance, password):
         self._name = name
         self._balance = balance
         self._password = password
-        self._number = number
         
     def get_account_number(self, number):
         return self._number
