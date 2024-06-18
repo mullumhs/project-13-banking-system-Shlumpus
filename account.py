@@ -27,12 +27,10 @@ class Account:
         password = new_password
         
     def deposit(self, addition):
-        self._get_balance()
         self._balance += addition
         
     def withdraw(self, balance, subtraction):
         if subtraction < balance:
-            self._get_balance()
             self._balance -= subtraction
         else:
             raise ValueError(f"Unable to withdraw, your balance is below {subtraction}")
