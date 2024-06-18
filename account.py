@@ -5,10 +5,11 @@
 # Date: 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 class Account:
-    def __init__(self, name, balance, password):
+    def __init__(self, name, balance, password, number):
         self._name = name
         self._balance = balance
         self._password = password
+        self._number = number
         
     def get_account_number(self, number):
         return self._number
@@ -34,5 +35,6 @@ class Account:
             self._get_balance()
             self._balance -= subtraction
         else:
-            print("You have insufficient funds, withdrawal failed")
+            raise ValueError(f"Unable to withdraw, your balance is below {subtraction}")
+            
         
