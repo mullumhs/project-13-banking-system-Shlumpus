@@ -11,9 +11,8 @@ class BankManager():
     def __init__(self):
         self.accounts = []
         
-    def add_account(self, name, password):
-        balance = '0'
-        new_account = Account(name, balance, password)
+    def add_account(self, name, password, balance=0):
+        new_account = Account(name, password, balance)
         self.accounts.append(new_account)
         
     def remove_account(self, target):
@@ -31,7 +30,8 @@ class BankManager():
                 
         
     def display_accounts(self):
-        print(self.accounts, sep='\n')
+        for account in self.accounts:
+            print(account)
         
     def deposit(self, number, deposit_amount):
         print()

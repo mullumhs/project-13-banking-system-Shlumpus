@@ -5,14 +5,10 @@
 # Date: 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 class Account:
-    def __init__(self, name, balance, password, number):
+    def __init__(self, name, password, balance):
         self._name = name
         self._balance = balance
         self._password = password
-        self._number = number
-        
-    def get_account_number(self, number):
-        return self._number
         
     def get_account_name(self, name):
         return self._name  
@@ -34,5 +30,8 @@ class Account:
             self._balance -= subtraction
         else:
             raise ValueError(f"Unable to withdraw, your balance is below {subtraction}")
+        
+    def __str__(self):
+        return f"{self._name}, \n {self._balance}"
             
         
